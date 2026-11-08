@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Departamento en 3D</title>
+  <link rel="stylesheet" href="estilo.css?v=8">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <header class="barra">
+    <strong class="titulo">Departamento en 3D</strong>
+    <nav class="vistas" id="vistas" aria-label="Vistas"></nav>
+    <button type="button" class="interruptor" id="btn-puertas" title="Abre o cierra todas las puertas">Cerrar puertas</button>
+    <button type="button" class="interruptor" id="btn-editar" aria-pressed="false" title="Activa la edición para mover, girar o sacar muebles">Editar muebles</button>
+    <a class="interruptor" id="btn-fotorrealista" href="../salidas/fotorrealista.html" target="_blank" rel="noopener" title="Imágenes fotorrealistas de la distribución A, de día y de noche">Fotorrealista</a>
+    <div class="muros" role="radiogroup" aria-label="Altura de los muros en la vista aérea">
+      <span>Muros</span>
+      <button type="button" role="radio" data-muros="altos" aria-checked="false">Altos</button>
+      <button type="button" role="radio" data-muros="bajos" aria-checked="true">Bajos</button>
+      <button type="button" role="radio" data-muros="muy_bajos" aria-checked="false">Muy bajos</button>
+    </div>
+  </header>
+  <main id="escena" aria-label="Modelo 3D del departamento"></main>
+
+  <aside class="panel" id="panel" aria-label="Distribución de los muebles">
+    <section>
+      <h2>Distribución</h2>
+      <div class="distribuciones" id="distribuciones"></div>
+      <p class="descripcion" id="descripcion"></p>
+    </section>
+
+    <section id="seleccion" class="seleccion" hidden>
+      <h2 id="sel-nombre"></h2>
+      <p class="medidas" id="sel-medidas"></p>
+      <p class="atencion" id="sel-avisos"></p>
+      <p class="medidas" id="sel-bloqueo">Para moverlo, activa «Editar muebles» arriba.</p>
+      <div class="fotos" id="sel-fotos"></div>
+      <div class="acciones">
+        <button type="button" id="btn-girar">Girar 90°</button>
+        <button type="button" id="btn-sacar">Sacar de esta distribución</button>
+      </div>
+    </section>
+
+    <section>
+      <h2>Avisos</h2>
+      <ul class="lista" id="avisos"></ul>
+    </section>
+
+    <section id="sin-ubicar-sec" hidden>
+      <h2>Sin ubicar</h2>
+      <ul class="lista" id="sin-ubicar"></ul>
+    </section>
+
+    <section class="acciones">
+      <p class="version-info" id="version-info"></p>
+      <input type="text" id="nota-version" maxlength="300" placeholder="Nota opcional: qué cambiaste y por qué" aria-label="Nota de la versión" hidden>
+      <button type="button" id="btn-guardar-version" hidden>Guardar versión</button>
+      <button type="button" id="btn-copiar">Copiar cambios</button>
+      <button type="button" id="btn-restablecer" title="Vuelve a la última versión guardada">Descartar cambios</button>
+      <p class="estado-acciones" id="estado-acciones" role="status"></p>
+    </section>
+  </aside>
+
+  <footer class="ayuda" id="ayuda"></footer>
+  <div class="aviso" id="aviso" hidden></div>
+  <script type="module" src="app.js?v=16"></script>
+</body>
+</html>

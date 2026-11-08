@@ -1,0 +1,52 @@
+{
+  "nota": "Renders fotorrealistas con Blender (herramientas/render_fotorrealista.py). spots_dia = luces de techo que de día también van prendidas (ambientes sin ventana); exposicion_extra = pasos de exposición que se suman por modo. pos y mira = [x, y, altura] en metros, en las coordenadas del plano (las de depto.json). lente en mm, con sensor de 36 mm. desplazamiento = corrimiento vertical del encuadre (cámara horizontal, verticales rectas). escena: altos (interior con techo) o bajos (maqueta con muros cortados). bajar = en la maqueta, cuadros o espejos (ids) que se cuelgan justo debajo del corte para que se vean en su pared; los demás cuadros se ocultan, porque quedarían flotando.",
+  "distribucion": "a",
+  "resolucion": [1800, 1200],
+  "muestras": {"dia": 192, "noche": 256},
+  "edificio_vecino_alto": 9.0,
+
+  "vistas": [
+    {"id": "living", "nombre": "Living hacia el ventanal", "pos": [3.50, 5.10, 1.45], "mira": [2.70, 0.30, 1.45], "lente": 16, "desplazamiento": -0.07, "exposicion_extra": {"dia": 0.4}},
+    {"id": "living_fondo", "nombre": "Living hacia el escritorio y el pasillo", "pos": [2.30, 0.60, 1.45], "mira": [3.95, 5.60, 1.45], "lente": 18, "desplazamiento": -0.07, "exposicion_extra": {"dia": 0.4}},
+    {"id": "comedor", "nombre": "Comedor frente al ventanal", "pos": [2.45, 2.55, 1.40], "mira": [3.55, 0.00, 1.40], "lente": 20, "desplazamiento": -0.07},
+    {"id": "cocina", "nombre": "Cocina hacia el balcón", "pos": [1.15, 4.20, 1.50], "mira": [0.45, 0.20, 1.50], "lente": 18, "desplazamiento": -0.06, "exposicion_extra": {"dia": 0.7}},
+    {"id": "dormitorio", "nombre": "Dormitorio", "pos": [5.35, 2.95, 1.45], "mira": [7.70, 1.00, 1.45], "lente": 18, "desplazamiento": -0.07},
+    {"id": "bano", "nombre": "Baño", "pos": [6.35, 4.62, 1.50], "mira": [7.55, 5.75, 1.50], "lente": 16, "desplazamiento": -0.07, "spots_dia": ["Baño"], "exposicion_extra": {"dia": -1.4, "noche": -0.3}},
+    {"id": "hall", "nombre": "Hall de entrada", "pos": [1.60, 4.55, 1.45], "mira": [0.00, 5.10, 1.45], "lente": 20, "desplazamiento": -0.16, "spots_dia": ["Hall"], "exposicion_extra": {"dia": -1.0}},
+    {"id": "maqueta", "nombre": "Maqueta en corte", "escena": "bajos", "bajar": ["espejo"], "pos": [4.00, 12.00, 11.50], "mira": [3.96, 2.60, 0.00], "lente": 30, "exposicion_extra": {"dia": -1.6, "noche": 0.4}}
+  ],
+
+  "dia": {
+    "nota": "Cielo físico y sol de media tarde que entra por la fachada, desde la izquierda mirando hacia afuera",
+    "sol_elevacion": 50,
+    "sol_desde": [-0.45, -1.0],
+    "sol_intensidad": 3.5,
+    "cielo_intensidad": 1.0,
+    "exposicion": 2.0,
+    "balance_blancos": 7000
+  },
+  "noche": {
+    "nota": "Luces cálidas de 2700 K: colgante del living, lámpara de arco, lámpara de pie, lámpara de la mesa de luz y spots de techo",
+    "kelvin": 2700,
+    "exposicion": 0.8,
+    "balance_blancos": 4300,
+    "spots_techo": [
+      {"nombre": "Cocina 1", "pos": [0.95, 1.20], "alto": 2.74, "potencia": 30},
+      {"nombre": "Cocina 2", "pos": [0.95, 3.00], "alto": 2.74, "potencia": 30},
+      {"nombre": "Pasillo", "pos": [5.42, 4.50], "alto": 2.26, "potencia": 25},
+      {"nombre": "Baño", "pos": [6.85, 4.80], "alto": 2.39, "potencia": 30},
+      {"nombre": "Hall", "pos": [0.90, 5.10], "alto": 2.74, "potencia": 25},
+      {"nombre": "Dormitorio", "pos": [6.40, 1.50], "alto": 2.74, "potencia": 20}
+    ]
+  },
+
+  "paleta": {
+    "nota": "Guía de estilo para los prompts de la etapa con IA",
+    "piso": "roble claro, tablas angostas (#c9955c)",
+    "paredes": "blanco cálido (#f0eee8)",
+    "sofa": "gris claro (#cbcac5)",
+    "acentos": "negro mate en marcos, tele y sillas de balcón; cromo en la mesa de vidrio y la lámpara de arco",
+    "cocina": "muebles blancos laqueados, granito gris claro, porcelanato blanco brillante",
+    "textiles": "cortinas de lino crudo atadas con soga, alfombras grises"
+  }
+}

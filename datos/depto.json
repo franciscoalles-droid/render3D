@@ -1,0 +1,109 @@
+{
+  "titulo": "Departamento · plano v3 (medidas del plano original)",
+  "version": 3,
+  "fecha": "2026-11-05",
+  "revision": "2026-11-06: paredes al costado de los dos clósets y purificador de la cocina (usuario y fotos). 2026-11-05: baño, hall, pasillo, ventanal y alto de techo corregidos con las fotos 11 a 21",
+  "unidades": "metros",
+  "sistema_de_coordenadas": "Origen en la esquina interior de la cocina contra la fachada. x crece hacia la derecha mirando la fachada desde adentro (cocina, living, dormitorio); y crece desde la fachada hacia el interior. Cada muro se define por su eje y su espesor.",
+  "alto_techo": 2.75,
+  "superficie_publicada_m2": {"cubierta": 54, "total": 56},
+  "contorno_cubierto": [[-0.25, -0.25, 8.17, 6.05]],
+  "fuentes": ["fotos/plano_original.pdf", "fotos/departamento/", "fotos/croquis_distribucion.png", "datos/relevamiento.md"],
+  "nota_plano": "Medidas de los ambientes según el plano original. Ventanas, enchufes, aires, balcón y alto de techo, estimados desde las fotos.",
+
+  "exteriores": [
+    {"id": "balcon", "nombre": "Balcón", "rect": [-0.25, -0.95, 4.92, -0.25], "piso": "porcelanato"}
+  ],
+
+  "ambientes": [
+    {"id": "cocina", "nombre": "Cocina", "rects": [[0, 0, 1.63, 4.30]], "piso": "porcelanato", "etiqueta": [1.12, 2.80]},
+    {"id": "living", "nombre": "Living-comedor", "rects": [[1.78, 0, 4.80, 5.85]], "piso": "madera", "etiqueta": [3.29, 2.60]},
+    {"id": "entrada", "nombre": "Entrada", "rects": [[0, 4.41, 1.78, 5.85]], "piso": "madera", "etiqueta": [1.10, 4.72]},
+    {"id": "dormitorio", "nombre": "Dormitorio", "rects": [[4.92, 0, 7.92, 3.05], [4.92, 3.05, 6.09, 3.68]], "piso": "madera", "etiqueta": [6.42, 1.45]},
+    {"id": "pasillo", "nombre": "Pasillo", "rects": [[4.80, 3.76, 6.05, 5.27]], "piso": "madera", "etiqueta": [5.42, 4.45]},
+    {"id": "bano", "nombre": "Baño", "rects": [[6.15, 3.76, 7.92, 5.85]], "piso": "porcelanato_gris", "solo_nombre": true, "etiqueta": [6.86, 5.02]}
+  ],
+
+  "muros": [
+    {"id": "fachada", "eje": "x", "en": -0.125, "desde": -0.25, "hasta": 8.17, "espesor": 0.25, "aberturas": [
+      {"tipo": "puerta", "nombre": "Puerta de la cocina al balcón", "desde": 0.78, "hasta": 1.58, "alto": 2.05, "bisagra": "hasta", "abre": "+", "hoja": "vidrio"},
+      {"tipo": "ventanal", "nombre": "Ventanal corredizo del living", "desde": 1.78, "hasta": 4.80, "alto": 2.20, "antepecho": 0, "nota": "De pared a pared (fotos 04, 10 y 19)"},
+      {"tipo": "ventana", "nombre": "Ventana del dormitorio", "desde": 4.97, "hasta": 7.62, "alto": 2.15, "antepecho": 0.10, "travesano": 0.90, "nota": "Paños fijos abajo hasta ~0,90 m y corredizos arriba (fotos 17 y 18)"}
+    ]},
+    {"id": "oeste", "eje": "y", "en": -0.125, "desde": -0.25, "hasta": 6.05, "espesor": 0.25},
+    {"id": "este", "eje": "y", "en": 8.045, "desde": -0.25, "hasta": 6.05, "espesor": 0.25},
+    {"id": "fondo", "eje": "x", "en": 5.95, "desde": -0.25, "hasta": 8.17, "espesor": 0.20, "aberturas": [
+      {"tipo": "puerta", "nombre": "Puerta de entrada", "desde": 0.52, "hasta": 1.40, "alto": 2.05, "bisagra": "desde", "abre": "-"}
+    ]},
+    {"id": "cocina_living", "eje": "y", "en": 1.705, "desde": 0, "hasta": 4.41, "espesor": 0.15},
+    {"id": "cocina_entrada", "eje": "x", "en": 4.355, "desde": 0, "hasta": 1.705, "espesor": 0.11, "aberturas": [
+      {"tipo": "puerta", "nombre": "Puerta de la cocina", "desde": 0.75, "hasta": 1.60, "alto": 2.05, "bisagra": "hasta", "abre": "-", "nota": "Bisagra del lado del living; abierta queda contra la pared derecha de la cocina (plano original y corrección del usuario)"}
+    ]},
+    {"id": "living_dormitorio", "eje": "y", "en": 4.86, "desde": 0, "hasta": 3.76, "espesor": 0.12},
+    {"id": "dormitorio_pasillo", "eje": "x", "en": 3.72, "desde": 4.80, "hasta": 7.92, "espesor": 0.08, "aberturas": [
+      {"tipo": "puerta", "nombre": "Puerta del dormitorio", "desde": 5.00, "hasta": 5.80, "alto": 2.05, "bisagra": "desde", "abre": "-"}
+    ]},
+    {"id": "pasillo_bano", "eje": "y", "en": 6.10, "desde": 3.72, "hasta": 5.85, "espesor": 0.10, "aberturas": [
+      {"tipo": "puerta", "nombre": "Puerta del baño", "desde": 4.35, "hasta": 5.20, "alto": 2.05, "bisagra": "desde", "abre": "+", "hoja_fija": 0.23, "nota": "Vano de 0,85 m (plano original): paño fijo del lado del lavamanos y hoja abatible con la bisagra del lado del inodoro; abre hacia el baño y abierta queda frente al inodoro (usuario y fotos 03 y 11)"}
+    ]},
+    {"id": "lado_closet_dormitorio", "eje": "y", "en": 6.05, "desde": 3.05, "hasta": 3.72, "espesor": 0.08, "nota": "Pared a la derecha del clóset del dormitorio, mirándolo de frente; tiene la llave de luz junto a la puerta (usuario, fotos 09 y 17)"},
+    {"id": "lado_closet_pasillo", "eje": "y", "en": 4.86, "desde": 5.27, "hasta": 5.95, "espesor": 0.12, "nota": "Pared divisoria entre el clóset del pasillo y el living, en línea con la pared living-dormitorio (usuario, foto 12 y plano original)"}
+  ],
+
+  "fijos": [
+    {"tipo": "closet", "nombre": "Clóset del dormitorio", "rect": [6.09, 3.05, 7.92, 3.68], "alto": 2.70, "frente": "-y", "etiqueta": "Clóset", "nota": "Puertas corredizas blancas (foto 09)"},
+    {"tipo": "closet", "nombre": "Clóset del pasillo", "rect": [4.92, 5.27, 6.05, 5.85], "alto": 2.27, "frente": "-y", "color": "oscuro", "etiqueta": "Clóset", "nota": "Dos puertas corredizas de madera oscura hasta el cielorraso del pasillo; adentro, estantes y barral (foto 12)"},
+    {"tipo": "cielorraso", "nombre": "Cielorraso bajo del pasillo", "rect": [4.80, 3.76, 6.05, 5.27], "alto_desde": 2.27, "en_plano": false, "nota": "Medido contra el alto de la puerta del baño (foto 11)"},
+    {"tipo": "cielorraso", "nombre": "Cielorraso del baño", "rect": [6.15, 3.76, 7.92, 5.85], "alto_desde": 2.40, "en_plano": false, "nota": "Estimado: el espejo llega al techo y desde el pasillo se ve el cielorraso por encima de la puerta (fotos 11 y 13)"},
+    {"tipo": "columna", "nombre": "Columna junto a la puerta de entrada", "rect": [0, 5.63, 0.52, 5.85], "nota": "Esquina entre la puerta de entrada y la pared oeste del hall (foto 21). Los tubos de la calefacción van por dentro de la pared: el resto de la pared está libre (usuario)."},
+    {"tipo": "registro", "nombre": "Tapa de registro de la calefacción", "rect": [0, 4.70, 0.015, 5.34], "alto_desde": 0.12, "alto_hasta": 0.68, "en_plano": false, "nota": "Foto 21: unos 64 x 56 cm, centrada en el tramo de pared, apoyada sobre el zócalo blanco; marco, puerta y cerradura chica arriba al centro"},
+    {"tipo": "cubierta", "nombre": "Cubierta de granito con muebles bajos", "rect": [0, 0.70, 0.62, 3.60], "alto": 0.90, "contra": "-x", "modulos": [{"hasta": 1.49, "puertas": 2}, {"hasta": 2.09, "horno": true}, {"hasta": 2.54, "cajones": 4}, {"hasta": 3.60, "puertas": 2}], "nota": "Al fondo, junto a la puerta del balcón, va el lavarropas; al entrar, a la izquierda, la heladera (usuario y plano original). Desde el balcón: bacha simple, anafe con horno, cajones y bacha doble (usuario y foto 22)"},
+    {"tipo": "mesada", "nombre": "Mesada sobre el lavarropas", "rect": [0, 0, 0.62, 0.70], "alto": 0.90, "nota": "La cubierta de granito sigue por encima del hueco del lavarropas (usuario)"},
+    {"tipo": "estante", "nombre": "Estantería abierta sobre el lavarropas", "rect": [0, 0, 0.35, 0.70], "alto_desde": 1.45, "alto_hasta": 2.30, "estantes": [1.87], "en_plano": false, "nota": "Al final de la cocina, junto a la puerta del balcón; el microondas va en el estante de abajo (usuario y foto 22)"},
+    {"tipo": "alacena", "nombre": "Alacena del lado del balcón", "rect": [0, 0.70, 0.35, 1.49], "alto_desde": 1.45, "alto_hasta": 2.30, "puertas": 1, "en_plano": false},
+    {"tipo": "alacena", "nombre": "Alacena sobre el purificador", "rect": [0, 1.49, 0.35, 2.09], "alto_desde": 1.81, "alto_hasta": 2.30, "puertas": 2, "en_plano": false, "nota": "Más corta que las demás: abajo va el purificador (foto 22)"},
+    {"tipo": "purificador", "nombre": "Purificador Spar sobre el anafe", "rect": [0, 1.49, 0.35, 2.09], "alto_desde": 1.62, "alto_hasta": 1.81, "visera": 0.46, "en_plano": false, "nota": "Empotrado bajo la alacena, con frente blanco y visera de acero extraíble (usuario y foto 22). Alturas medidas en proporción contra las alacenas vecinas"},
+    {"tipo": "alacena", "nombre": "Alacenas del lado de la heladera", "rect": [0, 2.09, 0.35, 3.60], "alto_desde": 1.45, "alto_hasta": 2.30, "puertas": 2, "en_plano": false},
+    {"tipo": "cielorraso", "nombre": "Bajada de cielorraso sobre las alacenas", "rect": [0, 0, 0.42, 4.30], "alto_desde": 2.30, "en_plano": false, "nota": "Foto 22"},
+    {"tipo": "lavaplatos", "nombre": "Bacha simple", "rect": [0.12, 0.93, 0.50, 1.27], "nota": "Junto al lavarropas, con canilla monocomando (usuario y foto 22)"},
+    {"tipo": "anafe", "nombre": "Anafe a gas con horno abajo", "rect": [0.04, 1.51, 0.60, 2.07], "horno": true},
+    {"tipo": "lavaplatos", "nombre": "Bacha doble", "rect": [0.08, 2.56, 0.54, 3.30], "doble": true},
+    {"tipo": "banera", "rect": [7.22, 3.76, 7.92, 5.27], "mampara": "+y", "etiqueta": "Bañera", "nota": "Contra la pared exterior, frente a la puerta, de 1,50 m. Mampara de vidrio rebatible del lado de la columna (fotos 03, 11 y 15)"},
+    {"tipo": "revestimiento", "nombre": "Azulejos del baño", "rect": [6.15, 3.76, 7.92, 5.85], "alto": 2.40, "material": "azulejo", "huecos": [{"lado": "-x", "desde": 4.35, "hasta": 5.20, "alto": 2.05}], "en_plano": false, "nota": "Azulejo crema claro de 60 x 60, satinado, del piso al cielorraso; piso de porcelanato gris claro (foto 23)"},
+    {"tipo": "columna", "nombre": "Columna revestida entre la bañera y el lavamanos", "rect": [7.05, 5.27, 7.92, 5.85], "material": "azulejo", "alto_hasta": 2.40, "nota": "En el plano original es un conducto en esa esquina. Fotos 13, 14 y 15: la mampara se apoya en su cara norte y el toallero está en la cara que da al lavamanos"},
+    {"tipo": "inodoro", "rect": [6.28, 3.76, 6.68, 4.38], "contra": "-y", "nota": "Más cerca de la pared de la puerta que del bidet (foto 16)"},
+    {"tipo": "bidet", "rect": [6.86, 3.76, 7.20, 4.36], "contra": "-y"},
+    {"tipo": "lavamanos", "rect": [6.15, 5.37, 7.05, 5.85], "alto": 0.85, "contra": "+y", "bacha": 6.52, "espejo_hasta": 2.40, "nota": "Mesada flotante con dos estantes de madera oscura, entre la pared de la puerta y la columna; bacha de apoyo hacia la puerta y espejo hasta el techo (fotos 01, 13 y 14)"},
+    {"tipo": "roller", "nombre": "Blackout del ventanal del living (enrollado)", "rect": [1.78, -0.075, 4.80, -0.005], "alto_desde": 0, "alto_hasta": 2.20, "cerrado": 0, "en_plano": false, "nota": "Pedido del usuario: blackout abierto. Va en el vano, así no choca con la viga"},
+    {"tipo": "cortinas", "nombre": "Cortinas del living", "rect": [1.80, 0.02, 4.48, 0.10], "alto": 2.28, "atadas": 1.05, "en_plano": false, "nota": "Dos paños atados al medio con una soga (pedido del usuario). El barral termina antes de la viga, que baja hasta 2,20 m"},
+    {"tipo": "roller", "nombre": "Cortina roller del dormitorio", "rect": [4.97, -0.075, 7.62, -0.005], "alto_desde": 0.10, "alto_hasta": 2.25, "cerrado": 0.333, "en_plano": false, "nota": "Pedido del usuario: bajada un tercio"},
+    {"tipo": "aire", "nombre": "Aire acondicionado split del living", "rect": [1.78, 0.25, 2.00, 1.05], "alto_desde": 2.30, "alto_hasta": 2.60, "etiqueta": "aire", "pos_etiqueta": [2.28, 0.65]},
+    {"tipo": "aire", "nombre": "Aire acondicionado split del dormitorio", "rect": [4.92, 0.25, 5.14, 1.05], "alto_desde": 2.30, "alto_hasta": 2.60, "etiqueta": "aire", "pos_etiqueta": [5.42, 0.65]},
+    {"tipo": "enchufe", "pos": [1.83, 1.30], "nota": "3 o 4 cajas: electricidad, TV y datos", "etiqueta": "TV", "pos_etiqueta": [2.13, 1.30]},
+    {"tipo": "enchufe", "pos": [4.75, 2.20]},
+    {"tipo": "enchufe", "pos": [4.97, 0.15]},
+    {"tipo": "enchufe", "pos": [7.87, 2.65], "nota": "doble"},
+    {"tipo": "viga", "rect": [4.50, 0, 4.80, 3.76], "alto_desde": 2.20, "etiqueta": "viga", "pos_etiqueta": [4.65, 3.40]},
+    {"tipo": "lampara", "pos": [3.29, 1.50]}
+  ],
+
+  "vistas": [
+    {"id": "aerea", "nombre": "Vista aérea", "modo": "aerea", "pos": [4.0, 12.5, 12.0], "mira": [3.96, 0, 2.9]},
+    {"id": "living", "nombre": "Living", "modo": "interior", "pos": [3.0, 1.6, 5.45], "mira": [3.3, 1.2, 0]},
+    {"id": "dormitorio", "nombre": "Dormitorio", "modo": "interior", "pos": [5.45, 1.6, 3.30], "mira": [7.6, 1.15, 0.5]},
+    {"id": "cocina", "nombre": "Cocina", "modo": "interior", "pos": [1.25, 1.6, 3.90], "mira": [0.5, 1.1, 0.2]},
+    {"id": "bano", "nombre": "Baño", "modo": "interior", "pos": [6.30, 1.6, 4.48], "mira": [7.5, 0.95, 5.75]},
+    {"id": "entrada", "nombre": "Entrada", "modo": "interior", "pos": [1.10, 1.6, 5.45], "mira": [3.8, 1.2, 2.2]}
+  ],
+
+  "cotas": [
+    {"eje": "x", "en": -1.35, "desde": 0, "hasta": 1.63},
+    {"eje": "x", "en": -1.35, "desde": 1.78, "hasta": 4.80},
+    {"eje": "x", "en": -1.35, "desde": 4.92, "hasta": 7.92},
+    {"eje": "y", "en": -0.80, "desde": 0, "hasta": 4.30, "lado": "izq"},
+    {"eje": "y", "en": -0.80, "desde": 4.41, "hasta": 5.85, "lado": "izq"},
+    {"eje": "y", "en": 8.60, "desde": 0, "hasta": 3.05, "lado": "der"},
+    {"eje": "y", "en": 8.60, "desde": 3.76, "hasta": 5.85, "lado": "der"},
+    {"eje": "y", "en": 9.00, "desde": 0, "hasta": 5.85, "lado": "der"}
+  ]
+}
